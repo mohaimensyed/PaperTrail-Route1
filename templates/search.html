@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+	Index
+{% endblock %}
+
+{% block body %}
+	
+  <h1>PAPERTRAIL - Route 1</h1>
+  <h2>WELCOME</h2>
+  <h2>BOOK</h2>
+  <ul>
+      {% for books in books %}
+          <li> <a href="{{ url_for('bookpage', book_isbn=books.isbn) }}">
+                  
+                  {{ books.isbn }}
+              </a>
+          </li>
+      {% else %}
+          <li>No books found</li>
+      {% endfor %}
+  </ul>
+
+{% endblock %}
